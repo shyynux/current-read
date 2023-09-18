@@ -1,13 +1,17 @@
 import express, { request, response } from "express";
 import { PORT, mongoDBURL} from "./config.js";
 import mongoose from 'mongoose';
-import { Book } from "./models/bookmodel.js";
-import booksRoute from "./routes/booksRoute.js"
+import booksRoute from "./routes/booksRoute.js";
+import cors from 'cors';
 
 const app = express();
 
 /* Middleware for parsing request body */
 app.use(express.json());
+
+/* Middleware for handling CORS POLICY */
+// Allow all origins
+app.use(cors());
 
 /* Creating the HTTP Route */
 app.get('/', (request, response) => {
