@@ -12,7 +12,7 @@ const ShowBook = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://localhost:5555/books/${id}`)
+      .get(`http://localhost:5555/books/${id}`)
       .then((response) => {
         setBook(response.data);
         setLoading(false);
@@ -20,8 +20,9 @@ const ShowBook = () => {
       .catch((error) => {
         console.log(error);
         setLoading(false);
-      })
-  })
+      });
+  }, [id]); // Add "id" as a dependency otherwise this will render infinitely.
+  
   return (
     <div className='p-4'>
       <BackButton />
