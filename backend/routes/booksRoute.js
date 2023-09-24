@@ -88,7 +88,7 @@ router.put('/:id', async (request, response) =>  {
 });
 
 /* Route for deleting a book */
-router.delete('/ :id', async (request, response) =>  {
+router.delete('/:id', async (request, response) =>  {
     try{
         const { id } = request.params;
         const deletedBook = await Book.findByIdAndDelete(id);
