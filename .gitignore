@@ -44,3 +44,6 @@ jspm_packages
 #Extra files in frontend
 frontend/node_modules/
 frontend/public
+
+#variables
+.env
