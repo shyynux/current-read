@@ -1,15 +1,23 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
     <div className="p-4 bg-pastel-green font-mono h-full w-full">
       <div className='flex flex-col my-4 ml-4 mr-4 pb-10'>
         <header className='flex items-center justify-between'>
-          <h2 className='w-2/3 text-2xl font-bold '>current-read</h2>
+          {/* <h2 className='w-2/3 text-2xl font-bold '>current-read</h2>
           <h3 className='flex text-l space-x-4 hover:font-serif'>search</h3>
           <h3 className='flex text-l space-x-2 hover:font-serif'>quick-add</h3>
           <h3 className='flex text-l space-x-2 hover:font-serif' >about cr</h3>
-          <h3 className='flex text-l space-x-2 font-bold hover:font-serif'>cady heron</h3>
+          {/* <h3 className='flex text-l space-x-2 font-bold hover:font-serif'>
+          cady heron</h3> */} 
+          <Link to="/" className='w-2/3 text-2xl font-bold '>current-read</Link>
+          <Link className='flex text-l space-x-4 hover:font-serif'>search</Link>
+          <Link to="http://localhost:5555/books/" className='flex text-l space-x-2 hover:font-serif'>quick-add</Link>
+          <Link className='flex text-l space-x-2 hover:font-serif' >about cr</Link>
+          <Link to="http://localhost:5555/books"
+          className='flex text-l space-x-2 font-bold hover:font-serif'>Cady Heron</Link>
         </header>
       </div>
       <main className='flex flex-row h-full w-full'>
