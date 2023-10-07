@@ -16,7 +16,7 @@ const Home = () => {
           <Link className='flex text-l space-x-4 hover:font-serif'>search</Link>
           <Link to="http://localhost:5555/books/" className='flex text-l space-x-2 hover:font-serif'>quick-add</Link>
           <Link className='flex text-l space-x-2 hover:font-serif' >about cr</Link>
-          <Link to="http://localhost:5555/books"
+          <Link to="/username"
           className='flex text-l space-x-2 font-bold hover:font-serif'>Cady Heron</Link>
         </header>
       </div>
