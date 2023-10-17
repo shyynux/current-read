@@ -1,7 +1,20 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { account } from '../../../backend/appwrite';
+
 
 const Profile = () => {
+
+  const [userName, setUserName] = useState(null);
+  const promise = account.get();
+
+  promise.then(function (response) {
+    console.log('yo whats mah name'); // Success
+    setUserName(response.name);
+  }, function (error) {
+      console.log(error); // Failure
+  });
+
   return (
     <div className="p-4 bg-pastel-green font-mono h-full w-full">
       <div className='flex flex-col my-4 ml-4 mr-4 pb-10'>
@@ -11,7 +24,7 @@ const Profile = () => {
       </div>
       <div className='flex flex-row p-4 justify-between'>
         <div className='w-2/3 font-bold'> Welcome to your book-shelf cady</div>
-        <div className=''>Cady Heron </div>
+        <div className=''>{userName}</div>
       </div>
       <div className='flex flex-row p-4 justify-between'>
       <div className='w-4/5'>all the book details</div>

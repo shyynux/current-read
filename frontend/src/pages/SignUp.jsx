@@ -9,7 +9,7 @@ const [password, setPassword] = useState('');
 const [name, setName] = useState('');
 
 async function signup(email, password, name) {
-    await account.create(email, password, name);;
+    await account.create(email, password, name);
     setLoggedInUser(await account.get());
 }
 

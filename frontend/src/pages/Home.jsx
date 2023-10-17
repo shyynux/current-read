@@ -1,8 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { account } from '../../../backend/appwrite'
 
 
 const Home = () => {
+
+  const [userName, setUserName] = useState(null);
+  const promise = account.get();
+
+  promise.then(function (response) {
+    console.log('yo whats mah name'); // Success
+    console.log(response.name);
+    setUserName(response.name);
+  }, function (error) {
+      console.log(error); // Failure
+  });
+
   return (
     <div className="p-4 bg-pastel-green font-mono h-full w-full">
       <div className='flex flex-col my-4 ml-4 mr-4 pb-10'>
@@ -22,7 +35,7 @@ const Home = () => {
           {/* <p>
           {loggedInUser ? `${loggedInUser.name}` : 'please login'}
           </p> */}
-          Username
+          <p>{userName}</p>
             </Link>
         </header>
       </div>
